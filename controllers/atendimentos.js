@@ -11,11 +11,10 @@ module.exports = app => {
         Atendimentos.buscaPorId(id, res)
     })
 
-    app.post('/atendimentos', (req, resp) => {
+    app.post('/atendimentos', (req, res) => {
         const atendimento = req.body
 
-        Atendimentos.adiciona(atendimento)
-        resp.send('Atendimentos POST')
+        Atendimentos.adiciona(atendimento, res)
     })
 
     app.patch('/atendimentos/:id', (req, res) => {
